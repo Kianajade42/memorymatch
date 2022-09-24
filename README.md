@@ -1,4 +1,8 @@
 # memorymatch
+Memory Match 
+
+Memory match is a card game to test your memory. Can you find all the matches before the time is up?
+
 Installation 
 
 Clone the backend from GitHub
