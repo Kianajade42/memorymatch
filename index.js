@@ -1,27 +1,4 @@
-// function getUsersData () {
-//     return fetch('http://localhost:3000/users')
-//     .then(res => res.json())
-//     .then(data => {
-//         allUsers = data
-//     })
-// }
-const URL = 'http://localhost:3000/users'
 
-const player = {
-
-  getUsers: () => {
-    return fetch(`${URL}/users`)
-    .then(res=>res.json())
-  },
-
-  createUser: (username) => {
-    return fetch(`${URL}/users`, {
-      method: 'POST',
-      headers: { "Content-Type": "application/json" },
-      body: JSON.stringify(username)
-    })
-    .then(res => res.json())
-  },
 // function ready() {
 //     let cards = Array.from(document.getElementsByClassName('card'));
 //     let game = new Match(150, cards);
