@@ -88,9 +88,9 @@ body {
 /* border-radius: 15px 15px 15px 15px; */
 /* transform: rotateY(180deg); */
 /* } */
-.card :hover {
+/* .card :hover {
   transform: rotateY(180deg);
-}
+} */
 
 .brain {
   align-self: flex-start;
