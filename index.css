@@ -140,6 +140,9 @@ body {
   color: #f1aed3;
   cursor: pointer;
 }
+.user-display {
+  background-color: #f1aed3;
+}
 
 @media (max-width: 600px) {
   .board {

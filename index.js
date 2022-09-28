@@ -1,57 +1,33 @@
 
-// function ready() {
-//     let cards = Array.from(document.getElementsByClassName('card'));
-//     let game = new Match(150, cards);
-//     cards.forEach(card => {
-//         card.addEventListener('click', () => {
-//             game.flipcard(card)
-//         });
-//     });
-// }
-// if (document.readyState === 'loading') {
-//     document.addEventListener('DOMcontentLoaded', ready());
-// } else {
-//     ready();
-// }
 
-// class Match {
-//     constructor(time, cards) {
-//         this.time = time;
-//         this.cards = cards;
-//         this.timeRemaining = time;
-//         this.timer = document.getElementById('timer');
-//     }
-//     startCountDown() {
-//         return setInterval(() => {
-//             this.time--;
-//             this.time.innerText = this.timeRemaining;
-//             if (this.timeRemaining === 0)
-//                 this.stop();
-//         }, 150);
-//     }
-//     startGame() {
-//         this.cardValid = null;
-//         this.totalClicks = 0;
-//         this.time = this.time;
-//         this.matches = [];
-//         this.busy = true;
-//         this.shuffleCards();
-//     }
-//     validFlipcard(card) {
-//         return true;
-//         //return !this.busy && !this.matchedCards.includes(card) && card !== this.cardValid;
-//     }
-//     flipCard(card) {
-//         if (this.canFlipCard(card)) {
-//             card.classList.add('visible')
-//         }
+function fetchUsers(){
+    return fetch('http://127.0.0.1:3000/users')
+    .then(resp => resp.json())
+    .then(json => renderUsers(json))
+}
+function renderUsers(user) {
+  const main = document.getElementById('user-display')
+  user.forEach(user => {
+    const h2 = document.createElement('h2')
+    h2.innerHTML = user.username
+    main.appendChild(h2)
+  })
+}
+function fetchGames(){
+    return fetch('http://127.0.0.1:3000/games')
+    .then(resp => resp.json())
+    .then(json => renderGames(json))
+}
+function renderGames(game) {
+  const main = document.getElementById('user-display')
+  game.forEach(game=> {
+    const h2 = document.createElement('h2')
+    h2.innerHTML = game.score
+    main.appendChild(h2)
+  })
+}
+document.addEventListener('DOMContentLoaded', function() {
+  fetchUsers(), fetchGames()
+})
 
-//     }
-    //  shuffleCards() {
-    // for (let i = this.cardsArray.length - 1; i > 0; i--) (
-    //   let shuffle = Math.floor(Math.random() * (i + 1));
-    //     this.cardsArray[shuffle].style.order = i;
-    //  this.cardsArray[i].style.order = shuffle;
-    // )
 
-// }
