@@ -2,7 +2,8 @@ html {
   min-height: 100vh;
 }
 body {
-  background: linear-gradient(to top, rgb(150, 229, 255) 0%, white 100%);
+  background: linear-gradient(to top, rgba(103, 225, 255, 0.829) 0%, white);
+  /* background: linear-gradient(to top, rgb(150, 229, 255) 0%, white 100%); */
   border-radius: 10px;
   color: black;
   width: 50%;
@@ -50,8 +51,8 @@ body {
 
 .card {
   position: relative;
-  width: 110px;
-  height: 110px;
+  width: 120px;
+  height: 125px;
 }
 .facing {
   position: absolute;
@@ -119,8 +120,9 @@ body {
   overflow: hidden;
 }
 
-button {
-  display: block;
+.startOver {
+  /* display: block; */
+  max-width: 150px;
   color: white;
   font-size: 20px;
   line-height: 22px;
@@ -133,7 +135,7 @@ button {
   box-shadow: gray;
   cursor: pointer;
 }
-button:hover {
+.startOver:hover {
   background: white;
   color: #f1aed3;
   cursor: pointer;
