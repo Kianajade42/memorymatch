@@ -5,8 +5,8 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <script src="script.js" async></script>
-    <script type="text/javascript" src="index.js"></script>
-    <script type="text/javascript" src="src/user.js"></script>
+    <script src="index.js"></script>
+    <!-- <script src="src/user.js"async></script>  -->
     <!-- <script src="src/user.js" type="text/javascript"> async</script> -->
     <link href="index.css" rel="stylesheet">
     <link rel="preconnect" href="https://fonts.gstatic.com">
@@ -18,7 +18,30 @@
 
 <body>
     <h1 class="title"> Memory Match </h1>
+
     <div class="game">
+        <div class="overlay-text intro visible" >
+            Memory Match
+          <h1 class="rules"> 
+              Match all the cards before the timer runs out!
+          </h1>
+        
+        <!-- <form class="layout" id="new-player-form"> -->
+            
+        <!-- <input class="login" type="text" id="username" name="username"><br> -->
+        <!-- <h2 class="rules"> Submit a username to play!</h2><br> -->
+        <div class= "overlay-text" id="start" >Lets play!</div>
+        <!-- </form> -->
+    
+        </div>
+        <div id="game-over-text" class="overlay-text">
+            Try again?
+            <span class="overlay-text-small">Play again</span>
+        </div>
+        <div id="win-text" class="overlay-text">
+            You Win!
+            <span class="overlay-text-small">Play again?</span>
+        </div>
 <div>
         <div class="info">
             Timer: <span id="timer">150</span>
@@ -139,11 +162,14 @@
             </div>
         </div>
     </div>
+
     </div>
 
     <div class="sidenav">
             <div class="info">Highscores</div>
-            <div  id="user-display"> </div>
+            <div id="user-display"> </div>
+            <!-- <div id="score-display"></div> -->
+
     </div>
 
 </body>

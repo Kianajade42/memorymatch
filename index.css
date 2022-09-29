@@ -120,28 +120,109 @@ body {
   overflow: hidden;
 }
 
-.startOver {
+.overlay-text .start {
   /* display: block; */
-  max-width: 150px;
+  /* max-width: 150px; */
   color: white;
   font-size: 20px;
-  line-height: 22px;
+  /* line-height: 22px; */
   padding: 16px 24px;
   border-radius: 35px;
-  margin: 15px auto;
+  margin-left: 20px auto;
   border: solid #fffdfe;
-  background: #f1aed3;
+  background: rgba(103, 225, 255, 0.829);
+  /* background: #f1aed3; */
   transition: all 200ms ease;
-  box-shadow: gray;
   cursor: pointer;
 }
-.startOver:hover {
+/* .new-player-form {
+  max-width: 5px;
+} */
+.overlay-text .start :hover {
   background: white;
   color: #f1aed3;
   cursor: pointer;
 }
 .user-display {
   background-color: #f1aed3;
+}
+.overlay-text {
+  display: none;
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  justify-content: center;
+  align-items: center;
+  z-index: 100;
+  font-family: "Pattaya", sans-serif;
+  color: white;
+}
+.rules {
+  font-family: "Pattaya", sans-serif;
+  display: flex;
+  font-size: 20px;
+  text-decoration: none;
+}
+.play {
+  font-family: "Pattaya", sans-serif;
+  display: flex;
+  font-size: 35px;
+  text-decoration: none;
+}
+.login {
+  font-family: "Pattaya", sans-serif;
+  display: flex;
+  font-size: 15px;
+}
+.overlay-layout {
+  line-height: 10px;
+}
+.submit {
+  font-family: "Pattaya", sans-serif;
+  display: flex;
+  font-size: 20px;
+  text-decoration: none;
+}
+.overlay-text-small {
+  font-size: 0.3em;
+}
+
+.overlay-text.visible {
+  display: flex;
+  flex-direction: column;
+  animation: overlay-grow 500ms forwards;
+}
+.intro.visible {
+  display: flex;
+  flex-direction: column;
+  animation: overlay-grow 500ms forwards;
+}
+.intro {
+  display: none;
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  justify-content: center;
+  align-items: center;
+  z-index: 100;
+  font-family: "Pattaya", sans-serif;
+  color: white;
+}
+
+@keyframes overlay-grow {
+  from {
+    background-color: rgba(255, 255, 255, 0.836);
+    font-size: 0;
+  }
+  to {
+    background-color: #f1aed3;
+    font-size: 5em;
+    /* text-decoration: underline; */
+  }
 }
 
 @media (max-width: 600px) {

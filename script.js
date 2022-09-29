@@ -32,6 +32,7 @@ class Match {
          });
      }
      startCountDown(){
+
          return setInterval(() => {
              this.timeRemaining--;
              this.timer.innerText = this.timeRemaining;
@@ -43,11 +44,11 @@ class Match {
             
         gameOver(){
             clearInterval(this.countDown)
-//  document.getElementById('game-over-text').classList.add('visible')
+            document.getElementById('game-over-text').classList.add('visible')
     }
-   win() {
-        clearInterval(this.countDown);
-        //document.getElementById('win-text').classList.add('visible');
+          win() {
+            clearInterval(this.countDown);
+            document.getElementById('win-text').classList.add('visible');
     }
 
 
@@ -63,8 +64,8 @@ class Match {
     }
 
       canFlipCard(card){
-        // return true;
-       return !this.busy && !this.matchedCards.includes(card) && card !== this.cardToCheck
+        //  return true;
+         return !this.busy && !this.matchedCards.includes(card) && card !== this.cardToCheck
     }
 
     flipCard(card) {
@@ -106,21 +107,27 @@ class Match {
 }
 
 function ready(){
+    let overlays = Array.from(document.getElementsByClassName('overlay-text'));
     let cards = Array.from(document.getElementsByClassName('card'));
     let game = new Match(150, cards);
-      game.startGame();
+    
+    overlays.forEach(overlay => {
+        overlay.addEventListener('click', () => {
+            overlay.classList.remove('visible');
+            game.startGame();
+        });
+    });
+
       cards.forEach(card => {
         card.addEventListener('click',() => {
             game.flipCard(card);
-        })
-    })
-
-     
+        });
+    });
+   
 }
 
 if(document.readyState === 'loading'){
-    document.addEventListener('DOMcontentLoaded', ready())
+    document.addEventListener('DOMcontentLoaded', ready(), fetchUsers(),fetchGames())
 } else {
-        ready(); 
-        
+        ready(),fetchUsers(),fetchGames()
 }

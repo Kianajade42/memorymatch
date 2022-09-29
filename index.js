@@ -5,6 +5,7 @@ function fetchUsers(){
     .then(resp => resp.json())
     .then(json => renderUsers(json))
 }
+
 function renderUsers(user) {
   const main = document.getElementById('user-display')
   user.forEach(user => {
@@ -17,6 +18,7 @@ function fetchGames(){
     return fetch('http://127.0.0.1:3000/games')
     .then(resp => resp.json())
     .then(json => renderGames(json))
+    
 }
 function renderGames(game) {
   const main = document.getElementById('user-display')
@@ -26,8 +28,15 @@ function renderGames(game) {
     main.appendChild(h2)
   })
 }
-document.addEventListener('DOMContentLoaded', function() {
-  fetchUsers(), fetchGames()
-})
 
+ 
+// function createUser() {
+// fetch('http://127.0.0.1:3000/users', {
+//   method: "POST",
+//   body: JSON.stringify(formData),
 
+// })
+// .then(response => response.json()) 
+// .then(json => console.log(json));
+
+// }
