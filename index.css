@@ -175,6 +175,7 @@ body {
   font-family: "Pattaya", sans-serif;
   display: flex;
   font-size: 15px;
+  line-height: 5px;
 }
 .overlay-layout {
   line-height: 10px;
@@ -212,7 +213,34 @@ body {
   font-family: "Pattaya", sans-serif;
   color: white;
 }
-
+.form {
+  display: block;
+  margin-left: 125px;
+}
+.startOver {
+  font-family: "Pattaya", sans-serif;
+  display: block;
+  color: white;
+  font-size: 30px;
+  line-height: 25px;
+  padding: 16px 24px;
+  border-radius: 35px;
+  margin: 15px auto;
+  border: solid #fffdfe;
+  background: rgb(149, 212, 241);
+  transition: all 200ms ease;
+  box-shadow: rgb(59, 59, 59);
+  box-sizing: border-box;
+  cursor: pointer;
+}
+.startOver:hover {
+  background: white;
+  color: #f1aed3;
+  cursor: pointer;
+}
+.layout {
+  line-height: 10px;
+}
 @keyframes overlay-grow {
   from {
     background-color: rgba(255, 255, 255, 0.836);

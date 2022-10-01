@@ -29,14 +29,15 @@ function renderGames(game) {
   })
 }
 
- 
-// function createUser() {
-// fetch('http://127.0.0.1:3000/users', {
-//   method: "POST",
-//   body: JSON.stringify(formData),
 
-// })
-// .then(response => response.json()) 
-// .then(json => console.log(json));
-
-// }
+function createUser(username){
+    return fetch(`http://127.0.0.1:3000/users`,{
+        method: 'POST',
+        headers: {
+         "Content-Type": "application/json",
+         "Accept": "application/json"
+         },
+        body: JSON.stringify(username)
+    })
+    .then(res => res.json())
+}

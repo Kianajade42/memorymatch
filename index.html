@@ -25,14 +25,17 @@
           <h1 class="rules"> 
               Match all the cards before the timer runs out!
           </h1>
-        
-        <!-- <form class="layout" id="new-player-form"> -->
-            
-        <!-- <input class="login" type="text" id="username" name="username"><br> -->
-        <!-- <h2 class="rules"> Submit a username to play!</h2><br> -->
-        <div class= "overlay-text" id="start" >Lets play!</div>
-        <!-- </form> -->
-    
+           <h2 class="rules">Submit a username to play!</h2> 
+<div class="layout" id="login-form-div">
+<form autocomplete="off" id="login-form" class="layout" action="index.html" method="post">
+    <input class="rules" id="login-field" type="text" name="" value="" placeholder="username">
+    <br><br>
+    <input class="startOver" type="submit" value= "Lets Play!">
+    <br><br>
+</form>
+  
+</div>
+
         </div>
         <div id="game-over-text" class="overlay-text">
             Try again?
@@ -50,12 +53,6 @@
             Flips: <span id="flips">0</span>
         </div>
         </div>
-        <!-- <div class = "info">
-        <div class="startOver">
-            <span id="start">Start Over </span>
-        </div>
-        </div> -->
-
         <div class="board">
 
             <div class="card">
@@ -162,7 +159,7 @@
             </div>
         </div>
     </div>
-
+<!-- <leave a review form> -->
     </div>
 
     <div class="sidenav">

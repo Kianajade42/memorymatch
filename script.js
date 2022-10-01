@@ -110,13 +110,20 @@ function ready(){
     let overlays = Array.from(document.getElementsByClassName('overlay-text'));
     let cards = Array.from(document.getElementsByClassName('card'));
     let game = new Match(150, cards);
-    
-    overlays.forEach(overlay => {
-        overlay.addEventListener('click', () => {
-            overlay.classList.remove('visible');
-            game.startGame();
-        });
-    });
+    let loginForm = (document.getElementById("login-form"))
+    let player = (document.getElementById("login-field"))
+
+loginForm.addEventListener('submit', e=> {
+      e.preventDefault()
+
+      let user = player.value
+      let body = {username: user}
+          createUser(body)
+       overlays.forEach(overlay =>
+       overlay.classList.remove('visible'));
+       game.startGame()
+        }
+        )
 
       cards.forEach(card => {
         card.addEventListener('click',() => {
