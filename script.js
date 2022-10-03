@@ -36,9 +36,11 @@ class Match {
          return setInterval(() => {
              this.timeRemaining--;
              this.timer.innerText = this.timeRemaining;
-             if(this.timeRemaining === 0)
+             if
+             (this.timeRemaining === 0)
              this.gameOver();
          }, 1000);
+      
      }
 
             
@@ -46,11 +48,14 @@ class Match {
             clearInterval(this.countDown)
             document.getElementById('game-over-text').classList.add('visible')
     }
-          win() {
-            clearInterval(this.countDown);
-            document.getElementById('win-text').classList.add('visible');
-    }
 
+      
+          win() {
+            localStorage.setItem("score", this.totalClicks)
+            localStorage.setItem("time", this.totalTime)
+            document.getElementById('win-text').classList.add('visible')
+            document.getElementById("flip-form").innerHTML = localStorage.getItem("score")     
+            document.getElementById("time-form").innerHTML = localStorage.getItem("time")       }
 
   shuffleCards(){
          for(let i = this.cardsArray.length - 1; i > 0; i--){
@@ -64,8 +69,8 @@ class Match {
     }
 
       canFlipCard(card){
-        //  return true;
-         return !this.busy && !this.matchedCards.includes(card) && card !== this.cardToCheck
+         return true;
+        //  return !this.busy && !this.matchedCards.includes(card) && card !== this.cardToCheck
     }
 
     flipCard(card) {
@@ -78,7 +83,6 @@ class Match {
             else
             this.cardToCheck = card;  
         }
-    
     }
 
       checkForCardMatch(card) {
@@ -112,13 +116,16 @@ function ready(){
     let game = new Match(150, cards);
     let loginForm = (document.getElementById("login-form"))
     let player = (document.getElementById("login-field"))
+    let again = Array.from(document.getElementById('playAgain'));
 
-loginForm.addEventListener('submit', e=> {
+
+
+     loginForm.addEventListener('submit', e=> {
       e.preventDefault()
 
       let user = player.value
       let body = {username: user}
-          createUser(body)
+        //   createUser(body)
        overlays.forEach(overlay =>
        overlay.classList.remove('visible'));
        game.startGame()
@@ -131,6 +138,12 @@ loginForm.addEventListener('submit', e=> {
         });
     });
    
+       again.forEach(play => {
+        play.addEventListener('click',() => {
+            play.classList.remove('visible')
+            game.startGame();
+        });
+    });
 }
 
 if(document.readyState === 'loading'){

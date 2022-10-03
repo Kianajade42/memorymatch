@@ -20,6 +20,7 @@
     <h1 class="title"> Memory Match </h1>
 
     <div class="game">
+        <div>
         <div class="overlay-text intro visible" >
             Memory Match
           <h1 class="rules"> 
@@ -37,13 +38,22 @@
 </div>
 
         </div>
+
         <div id="game-over-text" class="overlay-text">
             Try again?
-            <span class="overlay-text-small">Play again</span>
+            <span class="overlay-text-small" id="playAgain">Play again</span>
         </div>
+        <!-- <div class="overlay-text intro visible"> -->
         <div id="win-text" class="overlay-text">
             You Win!
-            <span class="overlay-text-small">Play again?</span>
+
+           <div class="overlay-text-small visible" id="win-form"> 
+            <!-- User <span id="user-win-form"> </span> -->
+            Flips: <span id="flip-form">0 </span> <br><br>
+            Time: <span id="time-form"> 0</span> <br><br>
+           </div>
+
+            <span class="overlay-text-small" id="playAgain" >Play again?</span>
         </div>
 <div>
         <div class="info">
