@@ -1,14 +1,12 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="en">
 
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <script src="script.js" async></script>
-    <script src="index.js"></script>
-    <!-- <script src="src/user.js"async></script>  -->
-    <!-- <script src="src/user.js" type="text/javascript"> async</script> -->
-    <link href="index.css" rel="stylesheet">
+    <script src="src/index.js" async></script>
+    <script src="src/api.js" async></script>
+    <link href="css/index.css" rel="stylesheet">
     <link rel="preconnect" href="https://fonts.gstatic.com">
     <link href="https://fonts.googleapis.com/css2?family=Fredoka+One&display=swap" rel="stylesheet">
     <link rel="preconnect" href="https://fonts.gstatic.com">
@@ -21,15 +19,17 @@
 
     <div class="game">
         <div>
-        <div class="overlay-text intro visible" >
+        <!-- <div class="overlay-text intro visible" > -->
             Memory Match
           <h1 class="rules"> 
-              Match all the cards before the timer runs out!
+             Match all the cards before the timer runs out!
           </h1>
+        <!-- <div class="overlay-text-small visible">Lets go!</div> -->
+        
            <h2 class="rules">Submit a username to play!</h2> 
-<div class="layout" id="login-form-div">
-<form autocomplete="off" id="login-form" class="layout" action="index.html" method="post">
-    <input class="rules" id="login-field" type="text" name="" value="" placeholder="username">
+<div class="layout" id="login-form">
+<form autocomplete="off" id="username" class="layout" action="http://127.0.0.1:3000/users" method="post">
+    <input class="rules" id="login-field" type="text" name="username" value="" placeholder="username">
     <br><br>
     <input class="startOver" type="submit" value= "Lets Play!">
     <br><br>
@@ -41,7 +41,7 @@
 
         <div id="game-over-text" class="overlay-text">
             Try again?
-            <span class="overlay-text-small" id="playAgain">Play again</span>
+            <span class="overlay-text">Play again?</span>
         </div>
         <!-- <div class="overlay-text intro visible"> -->
         <div id="win-text" class="overlay-text">
@@ -53,7 +53,17 @@
             Time: <span id="time-form"> 0</span> <br><br>
            </div>
 
-            <span class="overlay-text-small" id="playAgain" >Play again?</span>
+            <span class="overlay-text-small" >Play again?</span> <br><br>
+       
+                <h3 class="rules"> Leave a review! </h3>
+            <form autocomplete="off" id="comment-form" class="layout" action="index.html" method="post">
+                <input class="rules" id="user-field" type="text" name="" value="" placeholder="username">
+                <br><br>
+                <input class="rules" id="comment-field" type="text" name="" value="" placeholder="comment">
+                <br><br>
+                <input class="startOver" type="submit" value="submit">
+                <br><br>
+            </form>
         </div>
 <div>
         <div class="info">
@@ -67,107 +77,120 @@
 
             <div class="card">
                 <div class=" front facing"> 
-                    <img class="face" src="images/apple.png">
+                    <img class="face" src="css/images/apple.png">
                 </div>
                 <div class="back facing">
-                     <img class="brain" src="images/brain.png">
+                     <img class="brain" src="css/images/brain.png">
                 </div>
             </div>
 
 
             <div class="card">
                 <div class="front facing">
-                    <img class="face" src="images/apple.png">
+                    <img class="face" src="css/images/apple.png">
                 </div>
                 <div class="back facing">
-                    <img class="brain" src="images/brain.png">
+                    <img class="brain" src="css/images/brain.png">
                 </div>
             </div>
 
 
             <div class="card">
                 <div class="front facing">
-                    <img class="face"  src="images/book.png">
+                    <img class="face"  src="css/images/book.png">
                 </div>
                 <div class="back facing">
-                    <img class="brain" src="images/brain.png">
+                    <img class="brain" src="css/images/brain.png">
                 </div>
             </div>
             <div class="card">
 
                 <div class="front facing">
-                    <img class="face"  src="images/book.png">
+                    <img class="face"  src="css/images/book.png">
                 </div>
                 <div class="back facing">
-                    <img class="brain" src="images/brain.png">
+                    <img class="brain" src="css/images/brain.png">
                 </div>
 
             </div>
             <div class="card">
                 <div class="front facing">
-                    <img class="face"  src="images/earth.png">
+                    <img class="face"  src="css/images/earth.png">
                 </div>
                 <div class="back facing">
-                    <img class="brain" src="images/brain.png">
+                    <img class="brain" src="css/images/brain.png">
                 </div>
             </div>
             <div class="card">
                 <div class="front facing">
-                    <img class="face"  src="images/earth.png">
+                    <img class="face"  src="css/images/earth.png">
                 </div>
                 <div class="back facing">
-                    <img class="brain" src="images/brain.png">
+                    <img class="brain" src="css/images/brain.png">
                 </div>
             </div>
             <div class="card">
                 <div class="front facing">
-                    <img class="face"  src="images/flowers.png">
+                    <img class="face"  src="css/images/flowers.png">
                 </div>
                 <div class="back facing">
-                    <img class="brain" src="images/brain.png">
+                    <img class="brain" src="css/images/brain.png">
                 </div>
             </div>
             <div class="card">
                 <div class="front facing">
-                    <img class="face"  src="images/flowers.png">
+                    <img class="face"  src="css/images/flowers.png">
                 </div>
                 <div class="back facing">
-                    <img class="brain" src="images/brain.png">
+                    <img class="brain" src="css/images/brain.png">
                 </div>
             </div>
             <div class="card">
                 <div class="front facing">
-                    <img class="face"  src="images/palmtree.png">
+                    <img class="face"  src="css/images/palmtree.png">
                 </div>
                 <div class="back facing">
-                    <img class="brain" src="images/brain.png">
+                    <img class="brain" src="css/images/brain.png">
                 </div>
             </div>
             <div class="card">
                 <div class="front facing">
-                    <img class="face"  src="images/palmtree.png">
+                    <img class="face"  src="css/images/palmtree.png">
                 </div>
                 <div class="back facing">
-                    <img class="brain" src="images/brain.png">
+                    <img class="brain" src="css/images/brain.png">
                 </div>
             </div>
             <div class="card">
                 <div class="front facing">
-                    <img class="face" src="images/sun.png">
+                    <img class="face" src="css/images/sun.png">
                 </div>
                 <div class="back facing">
-                    <img class="brain" src="images/brain.png">
+                    <img class="brain" src="css/images/brain.png">
                 </div>
             </div>
             <div class="card">
                 <div class="front facing">
-                    <img class="face"  src="images/sun.png">
+                    <img class="face"  src="css/images/sun.png">
                 </div>
                 <div class="back facing">
-                    <img class="brain" src="images/brain.png">
+                    <img class="brain" src="css/images/brain.png">
                 </div>
             </div>
         </div>
+    </div>
+    <div class="info"> Leave a review!
+        <!-- <form autocomplete="off" id="comment-form" class="layout" action="index.html" method="post">
+           <input class="rules" id="user-field" type="text" name="" value="" placeholder="username">
+            <br><br>
+            <input class="rules" id="comment-field" type="text" name="" value="" placeholder="comment">
+            <br><br>
+            <input class="startOver" type="submit" value="submit">
+            <br><br>
+        </form> -->
+<h1 class="info">User comments: </h1>
+<div id="comments"></div>
+
     </div>
 <!-- <leave a review form> -->
     </div>
@@ -175,7 +198,8 @@
     <div class="sidenav">
             <div class="info">Highscores</div>
             <div id="user-display"> </div>
-            <!-- <div id="score-display"></div> -->
+            <div id="score-display"> 
+             </div>
 
     </div>
 

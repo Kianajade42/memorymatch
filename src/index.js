@@ -1,3 +1,4 @@
+
 class Match {
 
     constructor(totalTime, cards){
@@ -114,30 +115,47 @@ function ready(){
     let overlays = Array.from(document.getElementsByClassName('overlay-text'));
     let cards = Array.from(document.getElementsByClassName('card'));
     let game = new Match(150, cards);
+
     let loginForm = (document.getElementById("login-form"))
     let player = (document.getElementById("login-field"))
-    let again = Array.from(document.getElementById('playAgain'));
 
+    let commentForm = (document.getElementById("comment-form"))
+    let review = (document.getElementById("comment-feild"))
+    let reviewer = (document.getElementById("user-feild"))
 
+    let again = Array.from(document.getElementsByClassName('overlay-text-small'));
+    cards.forEach(card => {
+        card.addEventListener('click',() => {
+            game.flipCard(card);
+        });
+    });
 
      loginForm.addEventListener('submit', e=> {
       e.preventDefault()
-
       let user = player.value
       let body = {username: user}
-        //   createUser(body)
+         createUser(body)
+          console.log(body)
        overlays.forEach(overlay =>
        overlay.classList.remove('visible'));
        game.startGame()
         }
         )
+      commentForm.addEventListener('submit', e=> {
+          e.preventDefault()
+      let r = reviewer.value
+      let rr = {username: r}
+      let rrr = review.value
+      let rrrr = {comment: rrr}
+         createUser(rr, rrrr )
+          console.log(body)
+       overlays.forEach(overlay =>
+       overlay.classList.remove('visible'));
+       game.startGame()
+     
+        }
+        )
 
-      cards.forEach(card => {
-        card.addEventListener('click',() => {
-            game.flipCard(card);
-        });
-    });
-   
        again.forEach(play => {
         play.addEventListener('click',() => {
             play.classList.remove('visible')
@@ -146,8 +164,9 @@ function ready(){
     });
 }
 
-if(document.readyState === 'loading'){
-    document.addEventListener('DOMcontentLoaded', ready(), fetchUsers(),fetchGames())
+
+          if(document.readyState === 'loading'){
+     document.addEventListener('DOMcontentLoaded', ready(), callUsers())
 } else {
-        ready(),fetchUsers(),fetchGames()
+        ready()
 }
