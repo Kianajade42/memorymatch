@@ -166,7 +166,7 @@ function ready(){
 
 
           if(document.readyState === 'loading'){
-     document.addEventListener('DOMcontentLoaded', ready(), callUsers())
+     document.addEventListener('DOMcontentLoaded', ready())
 } else {
-        ready()
+        ready() 
 }

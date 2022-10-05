@@ -14,7 +14,12 @@
     <title>memory game</title>
 </head>
 
-<body>
+<body onload="loadpage()">
+    <script>
+        function loadpage() {
+            callUsers(), callComments(), callGames()
+        }
+    </script>
     <h1 class="title"> Memory Match </h1>
 
     <div class="game">
@@ -179,7 +184,7 @@
             </div>
         </div>
     </div>
-    <div class="info"> Leave a review!
+    <!-- <div class="info"> Leave a review! -->
         <!-- <form autocomplete="off" id="comment-form" class="layout" action="index.html" method="post">
            <input class="rules" id="user-field" type="text" name="" value="" placeholder="username">
             <br><br>
@@ -188,8 +193,10 @@
             <input class="startOver" type="submit" value="submit">
             <br><br>
         </form> -->
-<h1 class="info">User comments: </h1>
-<div id="comments"></div>
+<h1 class="info">User reviews: </h1>
+<div id="comments">
+
+</div>
 
     </div>
 <!-- <leave a review form> -->
