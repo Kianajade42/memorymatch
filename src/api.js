@@ -28,10 +28,15 @@
 }
  function renderComments(comments){
  const reviews = document.getElementById("comments")
+//  const userreviews = document.getElementById("user-comments")
   comments.forEach(comment => {
     const h2 = document.createElement('h2')
+    const h3 = document.createElement('h3')
     h2.innerHTML = comment.comment
+    h3.innerHTML = comment.username
     reviews.appendChild(h2)
+    reviews.appendChild(h3)
+
   })
 }
 

@@ -235,19 +235,32 @@ body {
 }
 .startOver:hover {
   background: white;
-  color: #f1aed3;
+  color: rgb(241, 174, 211);
   cursor: pointer;
 }
 .layout {
   line-height: 10px;
 }
 .reviews {
-  background-color: white;
+    border: thin solid #3e3e3e;
+    background: linear-gradient(to top,
+      rgb(241, 174, 211) 0%,
+      white);
+      display: grid;
+      font-size: 1.5em;
+      margin-top: 5px;
+      padding: 20px;
+      text-align: left;
+  /* background-color: #f1aed3; */
     border-radius: 15px 15px 15px 15px;
+    border-color: white;
+    font-family: "Pattaya", sans-serif;
+      font-size: 15px;
+      text-decoration: none;
 }
 @keyframes overlay-grow {
   from {
-    background-color: rgba(255, 255, 255, 0.836);
+    background-color: rgba(84, 81, 81, 0.836);
     font-size: 0;
   }
   to {
