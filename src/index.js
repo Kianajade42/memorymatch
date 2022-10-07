@@ -53,10 +53,16 @@ class Match {
       
           win() {
             localStorage.setItem("score", this.totalClicks)
-            localStorage.setItem("time", this.totalTime)
+            localStorage.setItem("time", this.timeRemaining)
             document.getElementById('win-text').classList.add('visible')
-            document.getElementById("flip-form").innerHTML = localStorage.getItem("score")     
-            document.getElementById("time-form").innerHTML = localStorage.getItem("time")       }
+            let flipResult = localStorage.getItem("score")     
+            let timeResult = localStorage.getItem("time") 
+            const result = {score: flipResult, time: timeResult}
+                 createGame(result)
+            document.getElementById("flip-form").innerHTML = flipResult
+            // document.getElementById("time-form").innerHTML = timeResult
+    
+        }
 
   shuffleCards(){
          for(let i = this.cardsArray.length - 1; i > 0; i--){
@@ -111,9 +117,12 @@ class Match {
    
 }
 
-function ready(){
-    let overlays = Array.from(document.getElementsByClassName('overlay-text'));
-    let cards = Array.from(document.getElementsByClassName('card'));
+
+
+window.addEventListener('DOMContentLoaded', e => {
+// function ready(){
+    let overlays = Array.from(document.getElementsByClassName("overlay-text"));
+    let cards = Array.from(document.getElementsByClassName("card"));
     let game = new Match(150, cards);
 
     let loginForm = (document.getElementById("login-form"))
@@ -123,27 +132,31 @@ function ready(){
     let review = (document.getElementById("comment-feild"))
     let reviewer = (document.getElementById("user-feild"))
 
-    let again = Array.from(document.getElementsByClassName('overlay-text-small'));
+    let again = Array.from(document.getElementsByClassName('startOver'));
+
     cards.forEach(card => {
         card.addEventListener('click',() => {
             game.flipCard(card);
         });
     });
 
-     loginForm.addEventListener('submit', e=> {
-      e.preventDefault()
+     loginForm.addEventListener('submit',e => {
+        e.preventDefault()
       let user = player.value
       let body = {username: user}
          createUser(body)
-          console.log(body)
-       overlays.forEach(overlay =>
+          if(!body.null)
+           { overlays.forEach(overlay =>
        overlay.classList.remove('visible'));
-       game.startGame()
+       game.startGame()}
+       else {
+        alert("please enter a username")
+       }
         }
         )
       commentForm.addEventListener('submit', e=> {
           e.preventDefault()
-      let r = reviewer.value
+      let r = reviewer
       let rr = {username: r}
       let rrr = review.value
       let rrrr = {comment: rrr}
@@ -164,9 +177,4 @@ function ready(){
     });
 }
 
-
-          if(document.readyState === 'loading'){
-     document.addEventListener('DOMcontentLoaded', ready())
-} else {
-        ready() 
-}
+)

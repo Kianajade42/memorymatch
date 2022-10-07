@@ -21,25 +21,26 @@
         }
     </script>
     <h1 class="title"> Memory Match </h1>
-
+    
     <div class="game">
         <div>
-        <!-- <div class="overlay-text intro visible" > -->
+            <!-- <div class="overlay-text intro visible"> -->
             Memory Match
-          <h1 class="rules"> 
-             Match all the cards before the timer runs out!
-          </h1>
-        <!-- <div class="overlay-text-small visible">Lets go!</div> -->
-        
-           <h2 class="rules">Submit a username to play!</h2> 
-<div class="layout" id="login-form">
-<form autocomplete="off" id="username" class="layout" action="http://127.0.0.1:3000/users" method="post">
-    <input class="rules" id="login-field" type="text" name="username" value="" placeholder="username">
-    <br><br>
-    <input class="startOver" type="submit" value= "Lets Play!">
-    <br><br>
-</form>
-  
+            <h1 class="rules">
+                Match all the cards before the timer runs out!
+            </h1>
+            <!-- <div class="overlay-text-small visible">Lets go!</div> -->
+    
+            <h2 class="rules">Submit a username to play!</h2>
+            <div class="layout" id="login-form">
+                <form autocomplete="off" id="username" class="layout" action="http://127.0.0.1:3000/users" method="post">
+                    <input class="rules" id="login-field" type="text" name="username" value="" placeholder="username">
+                    <br><br>
+                    <input class="startOver" type="submit" value="Lets Play!">
+                    <br><br>
+                </form>
+    
+            </div>
 </div>
 
         </div>
@@ -55,7 +56,7 @@
            <div class="overlay-text-small visible" id="win-form"> 
             <!-- User <span id="user-win-form"> </span> -->
             Flips: <span id="flip-form">0 </span> <br><br>
-            Time: <span id="time-form"> 0</span> <br><br>
+            <!-- Time Remaining: <span id="time-form"> 0</span> <br><br> -->
            </div>
 
             <span class="overlay-text-small" >Play again?</span> <br><br>
@@ -183,32 +184,16 @@
                 </div>
             </div>
         </div>
-    </div>
-    <!-- <div class="info"> Leave a review! -->
-        <!-- <form autocomplete="off" id="comment-form" class="layout" action="index.html" method="post">
-           <input class="rules" id="user-field" type="text" name="" value="" placeholder="username">
-            <br><br>
-            <input class="rules" id="comment-field" type="text" name="" value="" placeholder="comment">
-            <br><br>
-            <input class="startOver" type="submit" value="submit">
-            <br><br>
-        </form> -->
-<h1 class="info">User reviews: </h1>
+    </div> <br><br>
 <div id="comments" class="reviews">
-    <!-- <div id="user-comments"></div> -->
+    <h1 class="info">User reviews: </h1>
 </div>
-
-
     </div>
-<!-- <leave a review form> -->
     </div>
 
     <div class="sidenav">
-            <div class="info">Highscores</div>
-            <div id="user-display"> </div>
-            <div id="score-display"> 
-             </div>
-
+        <h1 class="info">Highscores</h1>
+            <h2 id="user-display"> </h2>
     </div>
 
 </body>

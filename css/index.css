@@ -2,7 +2,7 @@ html {
   min-height: 100vh;
 }
 body {
-  background: linear-gradient(to top, rgba(103, 225, 255, 0.829) 0%, white);
+  background: linear-gradient(to top, rgba(149, 212, 241) 0%, white);
   /* background: linear-gradient(to top, rgb(150, 229, 255) 0%, white 100%); */
   border-radius: 10px;
   color: black;
@@ -11,16 +11,29 @@ body {
   margin: 0px auto;
 }
 .sidenav {
-  height: 100%;
-  width: 0;
-  position: fixed;
   z-index: 1;
   top: 0;
   left: 0;
-  background-color: #111;
+  position: fixed;
+  height: 100%;
   text-decoration: underline #f1aed3;
   padding-top: 60px;
   transition: 0.5s;
+  border: thin solid #3e3e3e;
+    /* background: linear-gradient(to top,
+          rgb(241, 174, 211) 0%,
+          white); */
+    display: grid;
+    font-size: 1.5em;
+    margin-top: 5px;
+    padding: 20px;
+    text-align: left;
+    border-radius: 15px 15px 15px 15px;
+    border-color: white;
+    font-family: "Pattaya", sans-serif;
+    font-size: 15px;
+    text-decoration: none;
+
 }
 .title {
   font-family: "Pattaya", sans-serif;
@@ -36,6 +49,7 @@ body {
   justify-content: space-between;
   color: #f1aed3;
   text-align: center;
+  text-decoration: underline;
   font-size: 30px;
   line-height: 80px;
   font-weight: 600;
@@ -53,6 +67,7 @@ body {
   position: relative;
   width: 120px;
   height: 125px;
+  
 }
 .facing {
   position: absolute;
@@ -82,6 +97,7 @@ body {
   position: absolute;
   height: 100%;
   width: 100%;
+  box-shadow:2px 2px #888888;
 }
 .back:hover .brain {
   transform: translateY(0);
@@ -118,6 +134,7 @@ body {
   height: 100%;
   width: 100%;
   overflow: hidden;
+  box-shadow: 2px 2px #888888;
 }
 
 .overlay-text .start {
@@ -196,11 +213,13 @@ body {
   animation: overlay-grow 500ms forwards;
 }
 .intro.visible {
+ 
   display: flex;
   flex-direction: column;
   animation: overlay-grow 500ms forwards;
 }
 .intro {
+
   display: none;
   position: fixed;
   top: 0;
@@ -209,7 +228,7 @@ body {
   bottom: 0;
   justify-content: center;
   align-items: center;
-  z-index: 100;
+   z-index: 100;
   font-family: "Pattaya", sans-serif;
   color: white;
 }
